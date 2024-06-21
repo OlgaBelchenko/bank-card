@@ -1,9 +1,11 @@
-package bankcard;
+package bankcard.creditcard;
+
+import bankcard.BankCard;
 
 public class CreditCard extends BankCard {
 
-    private final double creditLimit;
-    private double creditBalance;
+    protected final double creditLimit;
+    protected double creditBalance;
 
     public CreditCard(double creditLimit) {
         super();
@@ -34,9 +36,8 @@ public class CreditCard extends BankCard {
             if (balance < 0) {
                 creditBalance += balance;
                 balance = 0;
-                result = true;
             }
-            System.out.printf("Сумма %.2f снята со счета\n", amount);
+            result = true;
         } else {
             System.out.printf("Сумма %.2f превышает баланс счета и доступный кредитный лимит, операция невозможна!\n", amount);
         }
@@ -55,7 +56,5 @@ public class CreditCard extends BankCard {
         } else {
             balance += amount;
         }
-        System.out.printf("Счет пополнен на %.2f рублей\n", amount);
     }
-
 }
