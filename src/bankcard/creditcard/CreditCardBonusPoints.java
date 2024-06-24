@@ -18,6 +18,12 @@ public class CreditCardBonusPoints extends CreditCard {
     }
 
     @Override
+    public void getBalanceInfo() {
+        super.getBalanceInfo();
+        System.out.printf("Бонусные баллы: %.2f\n", bonusPoints);
+    }
+
+    @Override
     public boolean pay(double amount) {
         if (super.pay(amount)) {
             double purchaseBonusPoints = amount * bonusPointsPercentage;
@@ -27,6 +33,7 @@ public class CreditCardBonusPoints extends CreditCard {
         return false;
     }
 
+    // Оплата со списанием бонусных баллов
     public boolean payWithBonusPoints(double amount) {
         boolean result = false;
         if (amount <= creditLimit - creditBalance + balance + bonusPoints) {

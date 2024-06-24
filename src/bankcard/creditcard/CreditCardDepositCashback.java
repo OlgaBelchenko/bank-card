@@ -12,6 +12,6 @@ public class CreditCardDepositCashback extends CreditCard {
     @Override
     public void deposit(double amount) {
         super.deposit(amount);
-        deposit(amount * cashbackPercentage);
+        balance += amount * cashbackPercentage;
     }
 }

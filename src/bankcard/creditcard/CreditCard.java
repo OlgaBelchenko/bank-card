@@ -16,8 +16,8 @@ public class CreditCard extends BankCard {
     // Информация о балансе
     @Override
     public void getBalanceInfo() {
-        System.out.printf("Собственные средства: %.2f рублей\n", this.balance);
         System.out.printf("Кредитные средства: %.2f рублей\n", creditLimit + creditBalance);
+        System.out.printf("Собственные средства: %.2f рублей\n", this.balance);
     }
 
     // Информация о доступных средствах

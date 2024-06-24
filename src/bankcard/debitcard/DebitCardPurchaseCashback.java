@@ -10,7 +10,9 @@ public class DebitCardPurchaseCashback  extends DebitCard {
     @Override
     public boolean pay(double amount) {
         if (super.pay(amount)) {
-            deposit(amount * cashbackPercentage);
+            if (amount > 5000) {
+                deposit(amount * cashbackPercentage);
+            }
             return true;
         }
         return false;
